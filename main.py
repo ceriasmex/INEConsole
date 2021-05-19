@@ -25,7 +25,8 @@ def validatestatus():
         runc=str(runc)
         if runc.find(incodef) != -1:
            incodefc=+1
-    alertinc="Contenedores de incodesmile corriendo: " + incodefc
+
+    alertinc="Contenedores de incodesmile corriendo: " + str(incodefc)
     print(alertinc)
 
 
