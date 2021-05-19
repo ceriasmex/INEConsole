@@ -41,7 +41,7 @@ def validatestatusc():
 
     init(autoreset=True)
     alertfc="Contenedores de incodesmile corriendo: " + str(incodefc)
-    print(Style.BRIGHT+Back.green+Fore.white+alertfc)
+    print(Style.BRIGHT+Back.GREEN+Fore.WHITE+alertfc)
     alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gateway correindo: " + str(incodeinewc) + "\nContenedores de incode loadbalancer: " + str(incodebc)
     print(alertinc)
 
