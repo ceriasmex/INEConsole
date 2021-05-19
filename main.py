@@ -14,9 +14,25 @@ def validatestatus():
     import schedule
     import time, os
     import psutil
+    import re
 
-    PROCNAME="docker"
+    PROCNAME={"docker","podman","java"}
+    ppodman=0
+    pjava=0
+    pdocker=0
+    for proc in psutil.process_iter():
+        for idp in PROCNAME:
+             if proc.name().find(idp) != -1:
+                 if idp == "java":
+                    pjava=+1
+                 elif idp == "podman":
+                     ppodman=+1
+                 elif idp == "docker":
+                     pdocker=+1
+             else:
+                print("no entro")
 
+    print("java " + str(pjava) + " docker " + str(pdocker) + "  podman " + str(ppodman))
 
 
 def print_menu(hostname):
@@ -29,6 +45,10 @@ def print_menu(hostname):
     print("2. Reinicar servidor.\n")
     print("3. Revisar disponibilidad de disco.\n")
     print("4. Recolectar bitacoras.")
+    #menu=input("Indica la opción desada: ")
+    menu="0"
+    if menu == "0":
+        validatestatus()
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
