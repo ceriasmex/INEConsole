@@ -21,11 +21,12 @@ def validatestatus():
 
     client=docker.from_env()
     for container in client.containers.list():
+        print(type(container))
         runc=container.attrs
         runc=str(runc)
         var=+1
         print(var)
-        print(runc )
+        #print(runc )
         if runc.find(incodef) != -1:
            incodefc=+1
 
