@@ -24,6 +24,7 @@ def validatestatus():
         if container.find(incodef) != -1:
          incodefc=+1
     print(container.attrs)
+    print(incodefc)
 
     PROCNAME={"docker","podman","java"}
     ppodman=0
