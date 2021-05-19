@@ -26,7 +26,7 @@ def validatestatus():
         if runc.find(incodef) != -1:
            incodefc=+1
     print(runc)
-    print(incodefc)
+
 
     PROCNAME={"docker","podman","java"}
     ppodman=0
