@@ -23,11 +23,11 @@ def validatestatus():
     for container in client.containers.list():
         runc=container.attrs
         runc=str(runc)
+        print(runc)
         if runc.find(incodef) != -1:
            incodefc=+1
 
     alertinc="Contenedores de incodesmile corriendo: " + str(incodefc)
-    print(alertinc)
 
 
     PROCNAME={"docker","podman","java"}
