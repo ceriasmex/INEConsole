@@ -17,15 +17,16 @@ def validatestatus():
     import psutil
 
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
-    inodefc=0
+    incodefc=0
 
     client=docker.from_env()
     for container in client.containers.list():
         runc=container.attrs
         runc=str(runc)
-        #if runc.find(incodef) != -1:
-        #incodefc=+1
+        if runc.find(incodef) != -1:
+           incodefc=+1
     print(runc)
+    print(incodefc)
 
     PROCNAME={"docker","podman","java"}
     ppodman=0
