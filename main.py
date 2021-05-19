@@ -25,6 +25,7 @@ def validatestatusc():
     incodeinewc=0
     incodebc=0
 
+#process to validate how many contairner are running.
     client=docker.from_env()
     for container in client.containers.list():
         runc=container.attrs
@@ -56,7 +57,7 @@ def print_menu(hostname):
     #menu=input("Indica la opción desada: ")
     menu="0"
     if menu == "0":
-        validatestatus()
+        validatestatusc()
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
