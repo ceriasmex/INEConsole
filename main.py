@@ -17,8 +17,10 @@ def validatestatus():
     import psutil
 
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
+    incodeinew="incodetech/incode-ine-gateway"
     incodefc=0
-    var=0
+    incodeinewc=0
+
 
     client=docker.from_env()
     for container in client.containers.list():
@@ -27,8 +29,10 @@ def validatestatus():
         #print(runc )
         if runc.find(incodef) != -1:
            incodefc+=1
+        elif runc.find(incodeinew) != -1:
+           incodeinewc+=1
 
-    alertinc="Contenedores de incodesmile corriendo: " + str(incodefc)
+    alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gatewau correindo: " + str(incodeinewc)
     print(alertinc)
 
     PROCNAME={"docker","podman","java"}
