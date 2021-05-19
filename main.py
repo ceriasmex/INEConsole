@@ -22,6 +22,7 @@ def validatestatus():
     client=docker.from_env()
     for container in client.containers.list():
         runc=container.attrs
+        runc=str(runc)
         #if runc.find(incodef) != -1:
         #incodefc=+1
     print(runc)
@@ -35,13 +36,13 @@ def validatestatus():
              if proc.name().find(idp) != -1:
                  if idp == "java":
                     pjava=+1
-                    print(proc)
+
                  elif idp == "podman":
                      ppodman=+1
-                     print(proc)
+
                  elif idp == "docker":
                      pdocker=+1
-                     print(proc)
+
 
     print("java " + str(pjava) + " docker " + str(pdocker) + "  podman " + str(ppodman))
 
