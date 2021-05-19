@@ -42,10 +42,10 @@ def validatestatusc():
     init(autoreset=True)
     alertfc="Contenedores de incodesmile corriendo: " + str(incodefc)
     if incodefc == 2:
-        alertfc=alertfc + " Es el numero correo de contenedores."
+        alertfc=alertfc + "                  Es el numero correo de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertfc)
     else:
-        alertfc = alertfc + " NO es el numero correo de contenedores."
+        alertfc = alertfc + "                NO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertfc)
 
     #alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gateway correindo: " + str(incodeinewc) + "\nContenedores de incode loadbalancer: " + str(incodebc)
