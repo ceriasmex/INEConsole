@@ -32,7 +32,6 @@ def validatestatus():
                  elif idp == "docker":
                      pdocker=+1
                      print(proc)
-             else:
 
     print("java " + str(pjava) + " docker " + str(pdocker) + "  podman " + str(ppodman))
 
