@@ -33,7 +33,6 @@ def validatestatus():
                      pdocker=+1
                      print(proc)
              else:
-                print("no entro")
 
     print("java " + str(pjava) + " docker " + str(pdocker) + "  podman " + str(ppodman))
 
