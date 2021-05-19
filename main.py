@@ -21,11 +21,10 @@ def validatestatus():
 
     client=docker.from_env()
     for container in client.containers.list():
-        runc=container
-        if runc.find(incodef) != -1:
-         incodefc=+1
-    print(container.attrs)
-    print(incodefc)
+        runc=container.attrs
+        #if runc.find(incodef) != -1:
+        #incodefc=+1
+    print(runc)
 
     PROCNAME={"docker","podman","java"}
     ppodman=0
