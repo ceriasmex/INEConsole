@@ -25,10 +25,13 @@ def validatestatus():
              if proc.name().find(idp) != -1:
                  if idp == "java":
                     pjava=+1
+                    print(proc)
                  elif idp == "podman":
                      ppodman=+1
+                     print(proc)
                  elif idp == "docker":
                      pdocker=+1
+                     print(proc)
              else:
                 print("no entro")
 
