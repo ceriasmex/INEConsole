@@ -15,8 +15,10 @@ def validatestatus():
     import schedule
     import time, os
     import psutil
-    import re
 
+    client=docker.from_env()
+    for container in client.containers.list():
+        print(container.id)
     PROCNAME={"docker","podman","java"}
     ppodman=0
     pjava=0
