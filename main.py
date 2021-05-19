@@ -18,17 +18,18 @@ def validatestatus():
 
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
     incodefc=0
+    var=0
 
     client=docker.from_env()
     for container in client.containers.list():
         print(type(container))
         runc=container.attrs
         runc=str(runc)
-        var=+1
+        var += 1
         print(var)
         #print(runc )
         if runc.find(incodef) != -1:
-           incodefc=+1
+           incodefc+=1
 
     alertinc="Contenedores de incodesmile corriendo: " + str(incodefc)
 
