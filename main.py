@@ -15,6 +15,7 @@ def validatestatusc():
     import schedule
     import time, os
     import psutil
+    from colorama import init, Fore, Back, Style
 
 # Define tags to review if the container it is running.
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
