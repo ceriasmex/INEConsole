@@ -25,7 +25,8 @@ def validatestatus():
         runc=str(runc)
         if runc.find(incodef) != -1:
            incodefc=+1
-    print(runc)
+    alertinc="Contenedores de incodesmile corriendo: " + incodefc
+    print(alertinc)
 
 
     PROCNAME={"docker","podman","java"}
