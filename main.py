@@ -34,7 +34,7 @@ def validatestatus():
         elif runc.find(incodeinew) != -1:
            incodeinewc+=1
         elif runc.find(incodeb) != -1:
-           incodeinbc+=1
+           incodebc+=1
 
     alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gateway correindo: " + str(incodeinewc) + "\nContenedores de incode loadbalancer: " + str(incodebc)
     print(alertinc)
