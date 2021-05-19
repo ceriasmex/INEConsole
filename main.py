@@ -10,19 +10,20 @@ def serverdata():
     hostname=platform.node()
     return(hostname)
 
-def validatestatus():
+def validatestatusc():
     import docker
     import schedule
     import time, os
     import psutil
 
+# Define tags to review if the container it is running.
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
     incodeinew="incodetech/incode-ine-gateway"
     incodeb="incodetech/nginx-loadbalancer"
+# Define counters per each kind of container.
     incodefc=0
     incodeinewc=0
     incodebc=0
-
 
     client=docker.from_env()
     for container in client.containers.list():
@@ -39,24 +40,7 @@ def validatestatus():
     alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gateway correindo: " + str(incodeinewc) + "\nContenedores de incode loadbalancer: " + str(incodebc)
     print(alertinc)
 
-    PROCNAME={"docker","podman","java"}
-    ppodman=0
-    pjava=0
-    pdocker=0
-    for proc in psutil.process_iter():
-        for idp in PROCNAME:
-             if proc.name().find(idp) != -1:
-                 if idp == "java":
-                    pjava=+1
 
-                 elif idp == "podman":
-                     ppodman=+1
-
-                 elif idp == "docker":
-                     pdocker=+1
-
-
-    print("java " + str(pjava) + " docker " + str(pdocker) + "  podman " + str(ppodman))
 
 
 def print_menu(hostname):
