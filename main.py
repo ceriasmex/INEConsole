@@ -23,7 +23,9 @@ def validatestatus():
     for container in client.containers.list():
         runc=container.attrs
         runc=str(runc)
-        print(runc)
+        var=+1
+        print(var)
+        print(runc )
         if runc.find(incodef) != -1:
            incodefc=+1
 
