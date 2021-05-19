@@ -11,6 +11,7 @@ def serverdata():
     return(hostname)
 
 def validatestatus():
+    import docker
     import schedule
     import time, os
     import psutil
