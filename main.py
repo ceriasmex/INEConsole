@@ -79,7 +79,7 @@ def validatestatusc():
     f=open("network.conf","r")
     line=f.readline()
     service,value=line.split("=")
-    print(type(service))
+    print(type(service),value)
     if service=='INEGW':
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.1:
