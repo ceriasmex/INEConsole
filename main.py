@@ -45,21 +45,21 @@ def validatestatusc():
     alertb="Contenedores de incode loadbalancer: " + str(incodebc)
 
     if incodefc == 2:
-        alertfc=alertfc + "\t\t\tEs el numero correo de contenedores."
+        alertfc=alertfc + "\t\t\tEs el numero correcto de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertfc)
     else:
         alertfc = alertfc + "              NO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertfc)
 
     if incodeinewc == 1:
-        alertinew=alertinew + "\t\t\tEs el numero correo de contenedores."
+        alertinew=alertinew + "\t\t\tEs el numero correcto de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertinew)
     else:
         alertinew = alertinew + "                NO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertinew)
 
     if incodebc == 1:
-        alertb=alertb + "\t\t\tEs el numero correo de contenedores."
+        alertb=alertb + "\t\t\t\tEs el numero correcto de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertb)
     else:
         alertb = alertb + "                NO es el numero correo de contenedores."
