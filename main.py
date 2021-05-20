@@ -76,7 +76,7 @@ def validatestatusc():
             print(Style.BRIGHT+Back.GREEN+Fore.WHITE+"Se tiene acceso al GW")
         else:
             print("no entro")
-    f=open("network.conf",r)
+    f=open("network.conf","r")
     line=f.readline()
     service=line.split("=")
 
