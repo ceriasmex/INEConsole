@@ -44,7 +44,7 @@ def validatestatusc():
     alertinew="Contenedores de incode ine gateway correindo: " + str(incodeinewc)
     alertb="Contenedores de incode loadbalancer: " + str(incodebc)
 
-    if incodefc == 2:
+    if incodefc == 3:
         alertfc=alertfc + "\t\t\tEs el numero correcto de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertfc)
     else:
