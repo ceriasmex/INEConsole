@@ -21,6 +21,7 @@ def validatestatusc():
     from pythonping import ping
     import netifaces
 
+
 # Define tags to review if the container it is running.
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
     incodeinew="incodetech/incode-ine-gateway"
@@ -69,8 +70,8 @@ def validatestatusc():
         alertb = alertb + "\t\t\t\tNO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertb)
 
-gws = netifaces.gateways()
-print(gws)
+    gws = netifaces.gateways()
+    print(gws)
 
 
 
