@@ -72,7 +72,7 @@ def validatestatusc():
     gws = netifaces.gateways()
     for key, value in gws.items():
         print(gws['default'][netifaces.AF_INET][0])
-        ping(gws['default'][netifaces.AF_INET][0], verbose=True)
+        ping(gws['default'][netifaces.AF_INET][0], count=10)
 
 
 
