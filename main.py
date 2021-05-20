@@ -79,8 +79,8 @@ def validatestatusc():
     f=open("network.conf","r")
     line=f.readline()
     service,value=line.split("=")
-    print(type(service),value)
     if service=='INEGW':
+        print(type(service), value)
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.1:
             print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW")
