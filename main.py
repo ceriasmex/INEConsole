@@ -78,7 +78,14 @@ def validatestatusc():
             print("no entro")
     f=open("network.conf","r")
     line=f.readline()
-    service=line.split("=")
+    service,value=line.split("=")
+    print(service)
+    if service=="INEGW":
+        inewp=ping(value,count=10)
+        if inewp.rtt_avg_ms < 0.1:
+            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW")
+        else:
+            print("No alcanza el_GW o tiempos muy altos.")
 
 
 def print_menu(hostname):
