@@ -71,7 +71,7 @@ def validatestatusc():
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertb)
     gws = netifaces.gateways()
     for key, value in gws.items():
-        print(key,value)
+        print(key)
 
     print(gws)
     print(type(gws))
