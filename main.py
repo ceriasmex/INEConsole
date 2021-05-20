@@ -73,9 +73,6 @@ def validatestatusc():
     for key, value in gws.items():
         print(value)
 
-    print(gws)
-    print(type(gws))
-    print(gws[2])
 
 
 
