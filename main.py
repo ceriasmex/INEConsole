@@ -73,7 +73,7 @@ def validatestatusc():
     for key, value in gws.items():
         gwp=ping(gws['default'][netifaces.AF_INET][0], count=10)
         if gwp.rtt_avg_ms < 0.001:
-            print(type(gwp.rtt_avg_ms))
+            print(gwp.rtt_avg_ms)
         else:
             print("no entro")
 
