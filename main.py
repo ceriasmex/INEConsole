@@ -48,7 +48,7 @@ def validatestatusc():
         alertfc=alertfc + "\t\t\tEs el numero correo de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertfc)
     else:
-        alertfc = alertfc + "                NO es el numero correo de contenedores."
+        alertfc = alertfc + "              NO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertfc)
 
     if incodeinewc == 1:
