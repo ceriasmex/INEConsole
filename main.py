@@ -4,6 +4,8 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import platform
 
+import netifaces
+
 
 def serverdata():
     import platform
@@ -16,6 +18,8 @@ def validatestatusc():
     import time, os
     import psutil
     from colorama import init, Fore, Back, Style
+    from pythonping import ping
+    import netifaces
 
 # Define tags to review if the container it is running.
     incodef="incodetech/ms-incodesmile-recognition-service:cpu"
@@ -44,7 +48,7 @@ def validatestatusc():
     alertinew="Contenedores de incode ine gateway correindo: " + str(incodeinewc)
     alertb="Contenedores de incode loadbalancer: " + str(incodebc)
 
-    if incodefc == 3:
+    if incodefc == 2:
         alertfc=alertfc + "\t\t\tEs el numero correcto de contenedores."
         print(Style.BRIGHT + Back.GREEN + Fore.WHITE + alertfc)
     else:
@@ -65,9 +69,8 @@ def validatestatusc():
         alertb = alertb + "\t\t\t\tNO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertb)
 
-    #alertinc="Contenedores de incodesmile corriendo: " + str(incodefc) + "\nContenedores de incode ine gateway correindo: " + str(incodeinewc) + "\nContenedores de incode loadbalancer: " + str(incodebc)
-    #print(alertinc)
-
+gws = netifaces.gateways()
+print(gws)
 
 
 
