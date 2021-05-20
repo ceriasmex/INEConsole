@@ -70,6 +70,7 @@ def validatestatusc():
         alertb = alertb + "\t\t\t\tNO es el numero correo de contenedores."
         print(Style.BRIGHT + Back.RED + Fore.WHITE + alertb)
     gws = netifaces.gateways()
+    print(gws)
     print(type(gws))
 
 
