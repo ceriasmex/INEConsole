@@ -73,9 +73,12 @@ def validatestatusc():
     for key, value in gws.items():
         gwp=ping(gws['default'][netifaces.AF_INET][0], count=10)
         if gwp.rtt_avg_ms < 0.1:
-            print(gwp.rtt_avg_ms)
+            print(Style.BRIGHT+Back.GREEN+Fore.WHITE+"Se tiene acceso al GW")
         else:
             print("no entro")
+    f=open("network.conf",r)
+    line=f.readline()
+    service=line.split("=")
 
 
 def print_menu(hostname):
