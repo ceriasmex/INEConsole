@@ -72,7 +72,7 @@ def validatestatusc():
     gws = netifaces.gateways()
     print(gws)
     print(type(gws))
-
+    print(gws['default'])
 
 
 
