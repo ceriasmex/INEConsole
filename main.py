@@ -80,7 +80,7 @@ def validatestatusc():
     line=f.readline()
     service,value=line.split("=")
     print(service)
-    if service=="INEGW":
+    if service=='INEGW':
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.1:
             print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW")
