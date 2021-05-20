@@ -72,7 +72,7 @@ def validatestatusc():
     gws = netifaces.gateways()
     for key, value in gws.items():
         gwp=ping(gws['default'][netifaces.AF_INET][0], count=10)
-        print(gwp.rtt_avg_ms)
+        print(type(gwp.rtt_avg_ms))
 
 
 
