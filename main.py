@@ -73,9 +73,9 @@ def validatestatusc():
     for key, value in gws.items():
         gwp=ping(gws['default'][netifaces.AF_INET][0], count=10)
         if gwp.rtt_avg_ms < 0.1:
-            print(Style.BRIGHT+Back.GREEN+Fore.WHITE+"Se tiene acceso al GW")
+            print(Style.BRIGHT+Back.GREEN+Fore.WHITE+"Se tiene acceso al GW Local")
         else:
-            print("no entro")
+            print(Style.BRIGHT + Back.RED + Fore.WHITE + "No se tiene acceso al GW Local")
     f=open("network.conf","r")
     line=f.readline()
     service,value=line.split("=")
@@ -85,9 +85,10 @@ def validatestatusc():
         print(type(service), value)
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.1:
-            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW")
+            print(inewp.rtt_avg_ms)
+            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW de la red INE")
         else:
-            print("No alcanza el_GW o tiempos muy altos.")
+            print(Style.BRIGHT + Back.RED + Fore.WHITE+ "No alcanza el_GW o tiempos muy altos.")
 
 
 def print_menu(hostname):
