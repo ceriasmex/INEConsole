@@ -77,25 +77,29 @@ def validatestatusc():
         else:
             print(Style.BRIGHT + Back.RED + Fore.WHITE + "No se tiene acceso al GW Local")
     f=open("network.conf","r")
-    line=f.readline()
-    service,value=line.split("=")
-    service=str(service).strip()
-    if service.find('INEGW') != -1:
-        inewp=ping(value,count=10)
-        if inewp.rtt_avg_ms < 0.1:
-            gwine="Se tiene acceso al GW de la red INE"+value
-            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwine )
-        else:
-            gwine="No alcanza el GW o tiempos muy altos." + value
-            print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwine)
-    if service.find('INCODEVPN') != -1:
-        inewp=ping(value,count=10)
-        if inewp.rtt_avg_ms < 0.1:
-            gwinc="Se tiene acceso al GW de la VPN INCODE"+value
-            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwinc )
-        else:
-            gwinc="No alcanza el VPN de Incode o tiempos muy altos." + value
-            print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwinc)
+    while True:
+        count =+ 1
+        line=f.readline()
+        if not line:
+            break
+        service,value=line.split("=")
+        service=str(service).strip()
+        if service.find('INEGW') != -1:
+            inewp=ping(value,count=10)
+            if inewp.rtt_avg_ms < 0.1:
+                gwine="Se tiene acceso al GW de la red INE"+value
+                print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwine )
+            else:
+                gwine="No alcanza el GW o tiempos muy altos." + value
+                print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwine)
+        if service.find('INCODEVPN') != -1:
+            inewp=ping(value,count=10)
+            if inewp.rtt_avg_ms < 0.1:
+                gwinc="Se tiene acceso al GW de la VPN INCODE"+value
+                print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwinc )
+            else:
+                gwinc="No alcanza el VPN de Incode o tiempos muy altos." + value
+                print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwinc)
 
 
 
