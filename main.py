@@ -82,12 +82,21 @@ def validatestatusc():
     service=str(service).strip()
     if service.find('INEGW') != -1:
         inewp=ping(value,count=10)
-        if inewp.rtt_avg_ms < 0.001:
+        if inewp.rtt_avg_ms < 0.1:
             gwine="Se tiene acceso al GW de la red INE"+value
             print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwine )
         else:
-            gwine="No alcanza el_GW o tiempos muy altos." + value
+            gwine="No alcanza el GW o tiempos muy altos." + value
             print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwine)
+    if service.find('INCODEVPN') != -1:
+        inewp=ping(value,count=10)
+        if inewp.rtt_avg_ms < 0.1:
+            gwinc="Se tiene acceso al GW de la VPN INCODE"+value
+            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwinc )
+        else:
+            gwinc="No alcanza el VPN de Incode o tiempos muy altos." + value
+            print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwinc)
+    close(f)
 
 
 def print_menu(hostname):
