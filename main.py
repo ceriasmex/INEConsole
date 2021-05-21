@@ -80,7 +80,6 @@ def validatestatusc():
     line=f.readline()
     service,value=line.split("=")
     service=str(service).strip()
-    print(service)
     if service.find('INEGW') != -1:
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.001:
