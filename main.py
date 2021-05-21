@@ -84,8 +84,8 @@ def validatestatusc():
             break
         service,data=line.split("=")
         service=str(service).strip()
+        data = str(data)
         if service.find('INEGW') != -1:
-            data=str(data)
             inewp=ping(data,count=10)
             if inewp.rtt_avg_ms < 0.1:
                 gwine="Se tiene acceso al GW de la red INE "+data
