@@ -84,10 +84,11 @@ def validatestatusc():
     if service.find('INEGW') != -1:
         inewp=ping(value,count=10)
         if inewp.rtt_avg_ms < 0.001:
-            print(inewp.rtt_avg_ms)
-            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + "Se tiene acceso al GW de la red INE")
+            gwine="Se tiene acceso al GW de la red INE"+value
+            print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwine )
         else:
-            print(Style.BRIGHT + Back.RED + Fore.WHITE+ "No alcanza el_GW o tiempos muy altos.")
+            gwine="No alcanza el_GW o tiempos muy altos." + value
+            print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwine)
 
 
 def print_menu(hostname):
