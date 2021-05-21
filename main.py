@@ -96,7 +96,7 @@ def validatestatusc():
                 print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwine)
         if service.find('INCODEVPN') != -1:
             inewp=ping(data,count=10)
-            if inewp.rtt_avg_ms < 0.1:
+            if inewp.rtt_avg_ms < 10:
                 gwinc="Se tiene acceso al GW de la VPN INCODE "+data
                 print(Style.BRIGHT + Back.GREEN + Fore.WHITE + gwinc )
             else:
