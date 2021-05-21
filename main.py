@@ -96,7 +96,7 @@ def validatestatusc():
         else:
             gwinc="No alcanza el VPN de Incode o tiempos muy altos." + value
             print(Style.BRIGHT + Back.RED + Fore.WHITE+ gwinc)
-    close(f)
+
 
 
 def print_menu(hostname):
